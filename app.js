@@ -11,7 +11,7 @@ var config = require(path.join(__dirname, '/', 'config.json'));
 app.enable("jsonp callback");
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 3111);
+  app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
   app.use(express.favicon());

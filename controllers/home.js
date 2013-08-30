@@ -29,10 +29,14 @@ var request = require('request');
 //       }));
 //     }));
 // }
-function indexAction(req, res, next) {
-  res.render('index');
+function Start(req, res, next) {
+  res.render('start');
+}
+function index(req, res, next){
+	res.render('index')
 }
 
 module.exports = {
-  index: indexAction
+  start: Start,
+  index:index
 };
