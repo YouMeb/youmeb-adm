@@ -37,9 +37,10 @@ function main() {
 
     function load() {
       count += 1;
+      this.width = 100;
+      this.height = 100;
       if (count === len) {
         done(els);
-        //console.log(els);
       }
     }
 
@@ -48,11 +49,9 @@ function main() {
       els[key] = image;
       image.onload = load;
       image.src = images[key];
-      //image.width = 100;
-      //image.height = 100;
     });
   })(images, function (images) {
-    var i = Math.round(Math.random() * gifts.length - 1) + 1;
+    var i = Math.round(Math.random() * (gifts.length - 1)) + 1;
     var ii = i >= 10 ? i : '0' + i;
 
     // 刮完啦
