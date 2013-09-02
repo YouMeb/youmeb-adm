@@ -14,3 +14,4 @@ fs.readdirSync(__dirname).forEach(function (filename) {
 });
 
 exports.User = mongoose.model('User');
+exports.Productid = mongoose.model('Productid');

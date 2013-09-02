@@ -1,4 +1,5 @@
 @charset 'UTF-8';
+
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-family:inherit;font-size:100%;vertical-align:baseline}
 body{line-height:1;color:#000;background:#fff}
 ol,ul{list-style:none}
@@ -10,8 +11,12 @@ body{background:#999}
 #mask{background:rgba(0,0,0,0.8);position:absolute;left:-100%;top:0;width:100%;height:100%;-webkit-transition:opacity 1s ease;-moz-transition:opacity 1s ease;-o-transition:opacity 1s ease;-ms-transition:opacity 1s ease;transition:opacity 1s ease;opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);}
 #mask.show{opacity:1;-ms-filter:none;filter:none;left:0}
 #mask .mask-msg{height:30px;width:100%;line-height:30px;position:absolute;top:50%;left:0;margin-top:-15px;text-align:center;color:#fff;font-size:24px}
+*{-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+-ms-box-sizing: border-box;
+box-sizing: border-box;}
 #bg{
-	background:url('/images/bg.jpg')  no-repeat center center fixed;
+	background:url('/images/bg.jpg')  no-repeat center center;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -19,7 +24,7 @@ body{background:#999}
 	margin: auto;
 }
 #bg2{
-	background:url('/images/bg2.png')  no-repeat center center fixed;
+	background:url('/images/bg2.png')  no-repeat center center;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -27,7 +32,7 @@ body{background:#999}
 	margin: auto;	
 }
 #bg_over{
-	background:url('/images/bg_over.jpg')  no-repeat center center fixed;
+	background:url('/images/bg_over.jpg')  no-repeat center center;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -35,7 +40,7 @@ body{background:#999}
 	margin: auto;		
 }
 #bg_phone{
-	background:url('/images/bg_over.jpg')  no-repeat center center fixed;
+	background:url('/images/bg_over.jpg')  no-repeat center center;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -43,19 +48,50 @@ body{background:#999}
 	margin: auto;		
 }
 #bg_input{
-	background:url('/images/bg2.png')  no-repeat center center fixed;
+	background:url('/images/bg1.png')  no-repeat center center;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
-	margin: auto;	
+	/*margin: auto;	*/
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+	overflow-x: hidden;
+	padding-top: 5rem;
+	-webkit-overflow-scrolling: touch;
 }
+.bg_index{
+	background:url('/images/index_bg.jpg')  no-repeat center center;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+	/*margin: auto;	*/
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+	overflow-x: hidden;
+	padding-top: 5rem;
+	-webkit-overflow-scrolling: touch;
+}
+
 .input_fr{
 	background: #aaa;
-	width: 300px;
-	height:400px;
-	margin: 0 auto;	
-	margin-top:200px;
+	width: 250px;
+	/*height:300px;*/
+	/*overflow: scroll;*/
+	margin: 0rem auto;	
+	/*position: absolute;*/
+	/*margin: 100px;*/
+	opacity: .7;
+	border-radius: 10px;
+	padding:20px;
+	/*top:50px;*/
+	height:80%;
+}
+.end_input_fr{
+	height: 60%
 }
 .btn1{
 	background:url('/images/button.png') 576px 288px;
@@ -75,11 +111,80 @@ body{background:#999}
 	width: 144px;
 	height: 72px;
 }
+.btn4{
+	background:url('/images/button.png') 308px 51px;
+	margin: auto;
+	width: 102px;
+	height: 51px;
+	cursor:pointer;
+}
+.btn5{
+	background:url('/images/button.png') 308px 51px;
+	margin: auto;
+	width: 102px;
+	height: 51px;
+	cursor:pointer;
+	float:left;
+	margin-left: 2px;
+}
+.s1{
+	background:url('/images/button.png') 410px 204px;
+}
+.s2{
+	background:url('/images/button.png') 308px 204px;
+}
+.s3{
+	background:url('/images/button.png') 206px 204px;
+}
+.s2.active{
+	background:url('/images/button.png') 308px 153px;
+}
+.btn_fr{
+	width: 314px;
+	margin: 0 auto;
+	height:51px;
+	margin-bottom: 10px;
+}
 .content{
-	background:url('/images/content.png')  no-repeat center center fixed;
+	background:url('/images/content.png')  no-repeat center center;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
 	margin: auto;	
+}
+html{
+	width: 100%;
+	height:100%;
+}
+body{
+	width: 100%;
+	height:100%;
+}
+.say_input_fr{
+	background: url('/images/content.png') no-repeat center center;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	width: 280px;
+  	height:80%;
+}
+@media (min-width: 325px) {
+	.btn5{
+		margin-left: 4px;
+	}
+	.btn_fr{
+	width: 320px;
+	margin: 20px auto;
+	}
+	.input_fr{
+		top:130px
+	}
+	#bg_input{
+		padding-top: 7rem;
+	}
+	.indexbb_fr{
+		margin-top:40px;
+	}
 }

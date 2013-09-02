@@ -23,16 +23,29 @@
   </div> -->
   <!-- <div id="bg_over"></div> -->
   <!-- <div id="bg_phone"></div> -->
-  <div class="bg_index">
-    <div class="btn_fr indexbb_fr">
-     <!-- <input type='submit' value=" " class="btn4">
-     <input type='submit' value=" " class="btn4">
-     <input type='submit' value=" " class="btn4"> -->
-     <a class="btn5 s1" href="/start"></a>
-     <a class="btn5 s2" href="/say"></a>
-     <a class="btn5 s3" href="/arround"></a>
-     </div>
-
+  <div id="bg_input">
+    <div class="input_fr">
+      <form action='/postdata' method='post'>
+      <input type='hidden' name='id' class="id">
+      <input type='hidden' name='uuid' class="uuid">
+      姓名：
+      <br/>
+      <input type='text' name='name' required>
+      <br/>
+      <br/>
+      地址：
+      <br/>
+      <input type='text' name='addr' required>
+      <br/>
+      <br/>
+      電子信箱：
+      <br/>
+      <input type='text' name='email' required>
+      <br/>
+      <br/>
+      <input type='submit' value=" " class="btn4">
+      </form>
+    </div>
   </div>
   <script>
       if (navigator.userAgent.indexOf('iPhone')!=-1) {
@@ -43,6 +56,15 @@
             window.scrollTo(0, 1); }, 10);
           });
       };
+      var id;
+      $.ajax({
+        type:'GET',
+        url:'/getid',
+      }).done(function(data){
+        console.log(data);
+        id = data.id;
+        $('.id').val(id);
+      });
       		// var _w = window.innerWidth;
       		// var _h = window.innerHeight;
         //   var a = (_h-480);

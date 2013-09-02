@@ -35,8 +35,42 @@ function Start(req, res, next) {
 function index(req, res, next){
 	res.render('index')
 }
+function radamnumber(req, res, next){
+	(new models.Productid({
+		isregist:0
+      })).save(function(err,pro){
+        res.send({id:pro._id})
+    })   
+}
+function postdata(req, res, next){
+	console.log(req)
+	models.Productid.update({ '_id': req.body.id},
+     {
+     	isregist:    1,  
+		name:        req.body.name,
+		address:     req.body.addr,
+		email:       req.body.email,
+		uuid:        req.body.uui
+     }
+     , function (err, numberAffected, raw) {
 
+    });
+}
+function end(req, res, next){
+	res.render('end')
+}
+function say(req, res, next){
+	res.render('say');
+}
+function input(req, res, next){
+	res.render('input')
+}
 module.exports = {
   start: Start,
-  index:index
+  index:index,
+  radamnumber:radamnumber,
+  postdata:postdata,
+  end:end,
+  say:say,
+  input:input
 };
