@@ -10,7 +10,8 @@
     "ejs": "*",
     "mongoose": "*",
     "request": "*",
-    "crypto": "*"
+    "crypto": "*",
+    "ya-csv":"*"
   },
   "author": "iamblue",  
   "license": "MIT",

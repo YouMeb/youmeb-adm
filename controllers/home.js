@@ -65,6 +65,9 @@ function say(req, res, next){
 function input(req, res, next){
 	res.render('input')
 }
+function arround(req, res ,next){
+  res.render('arround');
+}
 module.exports = {
   start: Start,
   index:index,
@@ -72,5 +75,6 @@ module.exports = {
   postdata:postdata,
   end:end,
   say:say,
-  input:input
+  input:input,
+  arround:arround
 };

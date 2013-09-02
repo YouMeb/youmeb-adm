@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8" />
+  <title>刮呀刮呀刮呀刮~~</title>
+  <meta name="author" content="Po-Ying Chen">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="/js/geolib.min.js"></script>
+</head>
+<body>
+  <div id="bg_input">
+    <div class="input_fr arround_fr">
+      離你最近的門市：
+      <hr/>
+      <ul>
+        <li>
+          <div style="width:100%;height:80px;">
+            <div style="width:60%;float:left;height:80px">
+            永吉站  
+            <p>地址地址</p>
+            </div>
+            <div style="width:40%;float:left;height:80px">
+            <a href="#"><img src="/images/phone.png" style="float:right"/></a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      其他門市：
+      <hr/>
+      <ul>
+        <li style="width:100%;height:65px;">
+            <div style="width:60%;float:left;height:65px">
+            永吉站  
+            <p>地址地址</p>
+            </div>
+            <div style="width:40%;float:left;height:65px">
+            <a href="#"><img src="/images/phone.png" style="float:right"/></a>
+            </div>
+        </li>
+        <li style="width:100%;height:1px;background:#ccc;margin-bottom:10px;"></li>
+        <li style="width:100%;height:80px;">
+            <div style="width:60%;float:left;height:80px">
+            永吉站  
+            <p>地址地址</p>
+            </div>
+            <div style="width:40%;float:left;height:80px">
+            <a href="#"><img src="/images/phone.png" style="float:right"/></a>
+            </div>
+        </li>
+        <li style="width:100%;height:1px;background:#ccc;margin-bottom:10px;"></li>
+        <li style="width:100%;height:80px;">
+            <div style="width:60%;float:left;height:80px">
+            永吉站  
+            <p>地址地址</p>
+            </div>
+            <div style="width:40%;float:left;height:80px">
+            <a href="#"><img src="/images/phone.png" style="float:right"/></a>
+            </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+  
+var spots = {
+    "Brandenburg Gate, Berlin": {latitude: 52.516272, longitude: 13.377722},
+    "Dortmund U-Tower": {latitude: 51.515, longitude: 7.453619},
+    "London Eye": {latitude: 51.503333, longitude: -0.119722},
+    "Kremlin, Moscow": {latitude: 55.751667, longitude: 37.617778},
+    "Eiffel Tower, Paris": {latitude: 48.8583, longitude: 2.2945},
+    "Riksdag building, Stockholm": {latitude: 59.3275, longitude: 18.0675},
+    "Royal Palace, Oslo": {latitude: 59.916911, longitude: 10.727567}
+}
+
+
+// in this case set offset to 1 otherwise the nearest point will always be your reference point
+console.log('yoyo');
+
+navigator.geolocation.getCurrentPosition(
+    function(position) {
+      console.log(position.coords);
+      console.log(geolib.findNearest(position.coords, spots, 1) );
+    }
+  );
+console.log('=====');
+      if (navigator.userAgent.indexOf('iPhone')!=-1) {
+        $('html').css('height' ,417);
+        $('body').css('height' ,417);
+          window.addEventListener("load",function() {  
+            setTimeout(function(){
+            window.scrollTo(0, 1); }, 10);
+          });
+      };
+      var id;
+      $.ajax({
+        type:'GET',
+        url:'/getid',
+      }).done(function(data){
+        console.log(data);
+        id = data.id;
+        $('.id').val(id);
+      });
+  </script>
+</body>
+</html>

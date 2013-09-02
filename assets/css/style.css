@@ -170,6 +170,9 @@ body{
   	width: 280px;
   	height:80%;
 }
+.arround_fr{
+	height:auto;
+}
 @media (min-width: 325px) {
 	.btn5{
 		margin-left: 4px;
