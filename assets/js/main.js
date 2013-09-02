@@ -30,27 +30,46 @@ function main() {
 
   // preload
   (function (images, done) {
-
-    var _w = window.innerWidth;
-    var _h = window.innerHeight;
-
-    console.log(_w);
-    console.log(_h);
     var keys = Object.keys(images);
     var len = keys.length;
     var count = 0;
     var els = {};
 
+    var size = (function () {
+      var w = window,
+        d = document,
+        e = d.documentElement,
+        g = d.getElementsByTagName('body')[0],
+        x = w.innerWidth || e.clientWidth || g.clientWidth,
+        y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+      return {
+        width: x,
+        height: y
+      };
+    })();
+
     function load() {
       count += 1;
-      console.log(this.width);
-      console.log(this.height);
-      // this.width = this.width*_w/640;
-      // this.height = this.height*_h/960;    
-      console.log(this);
-      console.log(this.width);
-      console.log(this.height);
-      console.log('=========');
+
+      var h = this.height;
+      var w = this.width;
+      var p;
+
+      if (h > size.height) {
+        p = size.height / h;
+        h = size.height;
+        w *= p;
+      }
+
+      if (w > size.width) {
+        p = size.width / w;
+        w = size.width;
+        h *= p;
+      }
+
+      this.height = h;
+      this.width = w;
+
       if (count === len) {
         done(els);
       }

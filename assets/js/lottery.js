@@ -197,8 +197,7 @@
           image: {
             init: function (layer) {
               var img = lottery.getImage();
-              console.log(lottery.width);
-              layer.ctx.drawImage(img, (lottery.width - img.width) / 2, (lottery.height - img.height) / 2);
+              layer.ctx.drawImage(img, (lottery.width - img.width) / 2, (lottery.height - img.height) / 2, img.width, img.height);
               //lottery.body.appendChild(layer.el);
             },
             before: function (layer) {
@@ -217,8 +216,8 @@
           grey: {
             init: function (layer) {
               var img = images.grey;
-              // console.log()
-              layer.ctx.drawImage(img, (lottery.width - img.width) / 2, (lottery.height - img.height) / 2 + 70);
+              //console.log((lottery.width - img.width) / 2);
+              layer.ctx.drawImage(img, (lottery.width - img.width) / 2, (lottery.height - img.height) / 2 + 70, img.width, img.height);
               //lottery.body.appendChild(layer.el);
               //console.log(layer);
             },
@@ -234,9 +233,9 @@
             init: function (layer) {
               var grey = images.grey;
               var bg = lottery.getImage();
-              layer.ctx.drawImage(grey, (lottery.width - grey.width) / 2, (lottery.height - grey.height) / 2 + 70);
+              layer.ctx.drawImage(grey, (lottery.width - grey.width) / 2, (lottery.height - grey.height) / 2 + 70, grey.width, grey.height);
               layer.ctx.globalCompositeOperation = 'source-out';
-              layer.ctx.drawImage(bg, (lottery.width - bg.width) / 2, (lottery.height - bg.height) / 2);
+              layer.ctx.drawImage(bg, (lottery.width - bg.width) / 2, (lottery.height - bg.height) / 2, bg.width, bg.height);
               layer.ctx.globalCompositeOperation = 'source-over';
             },
             before: function (layer) {
@@ -249,8 +248,7 @@
               layer.ctx.fillStyle = '#FFF';
               layer.ctx.fillRect(0, 0, lottery.width, lottery.height);
               layer.ctx.globalCompositeOperation = 'destination-out';
-              // console.log(bg);
-              layer.ctx.drawImage(bg, (lottery.width - bg.width) / 2, (lottery.height - bg.height) / 2);
+              layer.ctx.drawImage(bg, (lottery.width - bg.width) / 2, (lottery.height - bg.height) / 2, bg.width, bg.height);
               layer.ctx.globalCompositeOperation = 'source-over';
             }
           } 
