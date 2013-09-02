@@ -35,10 +35,41 @@ function main() {
     var count = 0;
     var els = {};
 
+    var size = (function () {
+      var w = window,
+        d = document,
+        e = d.documentElement,
+        g = d.getElementsByTagName('body')[0],
+        x = w.innerWidth || e.clientWidth || g.clientWidth,
+        y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+      return {
+        width: x,
+        height: y
+      };
+    })();
+
     function load() {
       count += 1;
-      this.width = 100;
-      this.height = 100;
+
+      var h = this.height;
+      var w = this.width;
+      var p;
+
+      if (h > size.height) {
+        p = size.height / h;
+        h = size.height;
+        w *= p;
+      }
+
+      if (w > size.width) {
+        p = size.width / w;
+        w = size.width;
+        h *= p;
+      }
+
+      this.height = h;
+      this.width = w;
+
       if (count === len) {
         done(els);
       }
