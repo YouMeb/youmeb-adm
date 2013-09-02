@@ -197,6 +197,7 @@
           image: {
             init: function (layer) {
               var img = lottery.getImage();
+              console.log(lottery.width);
               layer.ctx.drawImage(img, (lottery.width - img.width) / 2, (lottery.height - img.height) / 2);
               //lottery.body.appendChild(layer.el);
             },
@@ -248,6 +249,7 @@
               layer.ctx.fillStyle = '#FFF';
               layer.ctx.fillRect(0, 0, lottery.width, lottery.height);
               layer.ctx.globalCompositeOperation = 'destination-out';
+              // console.log(bg);
               layer.ctx.drawImage(bg, (lottery.width - bg.width) / 2, (lottery.height - bg.height) / 2);
               layer.ctx.globalCompositeOperation = 'source-over';
             }

@@ -30,6 +30,12 @@ function main() {
 
   // preload
   (function (images, done) {
+
+    var _w = window.innerWidth;
+    var _h = window.innerHeight;
+
+    console.log(_w);
+    console.log(_h);
     var keys = Object.keys(images);
     var len = keys.length;
     var count = 0;
@@ -37,8 +43,14 @@ function main() {
 
     function load() {
       count += 1;
-      this.width = 100;
-      this.height = 100;
+      console.log(this.width);
+      console.log(this.height);
+      // this.width = this.width*_w/640;
+      // this.height = this.height*_h/960;    
+      console.log(this);
+      console.log(this.width);
+      console.log(this.height);
+      console.log('=========');
       if (count === len) {
         done(els);
       }
