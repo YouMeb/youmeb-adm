@@ -457,11 +457,12 @@
 
         var ctx = lottery.ctx;
         var layers = lottery.layers;
-
+        var _w = window.innerWidth;
+        var _h = window.innerHeight;
         layers._keys.forEach(function (key) {
           var layer = layers[key];
           layer.before(layer);
-          ctx.drawImage(layers[key].el, 0, 0);
+          ctx.drawImage(layers[key].el, 0, 0,_w,_h);
           layer.after(layer);
         });
 
