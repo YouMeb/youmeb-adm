@@ -53,18 +53,35 @@ function main() {
 
       var h = this.height;
       var w = this.width;
+      var changed = false;
       var p;
 
       if (h > size.height) {
         p = size.height / h;
         h = size.height;
         w *= p;
+        changed = true;
       }
 
       if (w > size.width) {
         p = size.width / w;
         w = size.width;
         h *= p;
+        changed = true;
+      }
+
+      if (changed) {
+        if (h < size.height) {
+          p = size.height / h;
+          h = size.height;
+          w *= p;
+        }
+
+        if (w < size.width) {
+          p = size.width / w;
+          w = size.width;
+          h *= p;
+        }
       }
 
       this.height = h;
