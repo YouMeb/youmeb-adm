@@ -215,9 +215,9 @@
           },
           grey: {
             init: function (layer) {
-              var img = images.egg;
+              var img = images.grey;
               // console.log()
-              layer.ctx.drawImage(img, (lottery.width - img.width) / 2, (lottery.height - img.height) / 2);
+              layer.ctx.drawImage(img, (lottery.width - img.width) / 2, (lottery.height - img.height) / 2 + 70);
               //lottery.body.appendChild(layer.el);
               //console.log(layer);
             },
@@ -231,9 +231,9 @@
           },
           background: {
             init: function (layer) {
-              var egg = images.egg;
-              var bg = images['image-01'];
-              layer.ctx.drawImage(egg, (lottery.width - egg.width) / 2, (lottery.height - egg.height) / 2);
+              var grey = images.grey;
+              var bg = lottery.getImage();
+              layer.ctx.drawImage(grey, (lottery.width - grey.width) / 2, (lottery.height - grey.height) / 2 + 70);
               layer.ctx.globalCompositeOperation = 'source-out';
               layer.ctx.drawImage(bg, (lottery.width - bg.width) / 2, (lottery.height - bg.height) / 2);
               layer.ctx.globalCompositeOperation = 'source-over';

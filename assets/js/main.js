@@ -14,16 +14,15 @@ function main() {
 
   // 圖片
   var images = {
-    egg: 'images/gray.png',
-    hand: 'images/hand.png',
-    man: 'images/man.png',
+    bg: 'images/bg.jpg',
+    grey: 'images/gray.png',
     brush: 'images/brush.png'
   };
   (function (len) {
     var n;
     while (len) {
       n = len >= 10 ? len : '0' + len;
-      images['image-' + n] = 'images/' + n + '.jpg';
+      images['image-' + n] = 'images/image-' + n + '.jpg';
       len -= 1;
     }
   })(gifts.length);
@@ -32,16 +31,16 @@ function main() {
   // preload
   (function (images, done) {
     var keys = Object.keys(images);
-    console.log(keys)
     var len = keys.length;
     var count = 0;
     var els = {};
 
     function load() {
       count += 1;
+      this.width = 100;
+      this.height = 100;
       if (count === len) {
         done(els);
-        //console.log(els);
       }
     }
 
@@ -50,13 +49,9 @@ function main() {
       els[key] = image;
       image.onload = load;
       image.src = images[key];
-      console.log(image);
-      //image.width = 100;
-      //image.height = 100;
     });
-    console.log(els);
   })(images, function (images) {
-    var i = Math.round(Math.random() * gifts.length);
+    var i = Math.round(Math.random() * (gifts.length - 1)) + 1;
     var ii = i >= 10 ? i : '0' + i;
 
     // 刮完啦
