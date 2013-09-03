@@ -34,6 +34,9 @@ reader.addListener('data', function(data) {
     };
 })
 
+
+
+
 module.exports = function (app) {  
   	app.get('/start', controllers.home.start);
 	app.get('/input',controllers.home.input)

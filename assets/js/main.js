@@ -20,6 +20,7 @@ function main() {
   };
   (function (len) {
     var n;
+    console.log(len);
     while (len) {
       n = len >= 10 ? len : '0' + len;
       images['image-' + n] = 'images/image-' + n + '.jpg';
@@ -83,10 +84,8 @@ function main() {
           h *= p;
         }
       }
-
       this.height = h;
       this.width = w;
-
       if (count === len) {
         done(els);
       }
@@ -106,10 +105,11 @@ function main() {
     lottery.once('done', function () {
       $mask.classList.add('show');
       $msg.innerText = '恭喜你獲得' + gifts[i - 1];
+      $msg.innerHTML +='<br/><div style="width:100%;height:100px;"><a class="btn5 btnagain" href="/input"></a><a class="btn5 btngo" href="/start"></a></div>';
     });
 
     // 開始執行
-    lottery.setPercent(90);
+    lottery.setPercent(50);
     lottery.setImage(images['image-' + ii]);
     lottery.setBrush(images.brush);
     lottery.start('lottery', images);

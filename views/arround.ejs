@@ -12,80 +12,74 @@
 </head>
 <body>
   <div id="bg_input">
+    <div class="btn_fr">
+     <!-- <input type='submit' value=" " class="btn4">
+     <input type='submit' value=" " class="btn4">
+     <input type='submit' value=" " class="btn4"> -->
+      <a class="btn5 s1" href="/start"></a>
+      <a class="btn5 s2" href="/say"></a>
+      <a class="btn5 s3 active" href="/arround"></a>
+    </div>
     <div class="input_fr arround_fr">
       離你最近的門市：
       <hr/>
       <ul>
         <li>
-          <div style="width:100%;height:80px;">
-            <div style="width:60%;float:left;height:80px">
-            永吉站  
-            <p>地址地址</p>
-            </div>
-            <div style="width:40%;float:left;height:80px">
-            <a href="#"><img src="/images/phone.png" style="float:right"/></a>
-            </div>
+          <div style="width:100%;height:80px;" class="nearlestdiv">
+            loading...
           </div>
         </li>
       </ul>
       其他門市：
       <hr/>
-      <ul>
-        <li style="width:100%;height:65px;">
-            <div style="width:60%;float:left;height:65px">
-            永吉站  
-            <p>地址地址</p>
-            </div>
-            <div style="width:40%;float:left;height:65px">
-            <a href="#"><img src="/images/phone.png" style="float:right"/></a>
-            </div>
-        </li>
-        <li style="width:100%;height:1px;background:#ccc;margin-bottom:10px;"></li>
-        <li style="width:100%;height:80px;">
-            <div style="width:60%;float:left;height:80px">
-            永吉站  
-            <p>地址地址</p>
-            </div>
-            <div style="width:40%;float:left;height:80px">
-            <a href="#"><img src="/images/phone.png" style="float:right"/></a>
-            </div>
-        </li>
-        <li style="width:100%;height:1px;background:#ccc;margin-bottom:10px;"></li>
-        <li style="width:100%;height:80px;">
-            <div style="width:60%;float:left;height:80px">
-            永吉站  
-            <p>地址地址</p>
-            </div>
-            <div style="width:40%;float:left;height:80px">
-            <a href="#"><img src="/images/phone.png" style="float:right"/></a>
-            </div>
-        </li>
+      <ul class="othernestdiv">
+        loading...
       </ul>
     </div>
   </div>
   <script>
-  
-var spots = {
-    "Brandenburg Gate, Berlin": {latitude: 52.516272, longitude: 13.377722},
-    "Dortmund U-Tower": {latitude: 51.515, longitude: 7.453619},
-    "London Eye": {latitude: 51.503333, longitude: -0.119722},
-    "Kremlin, Moscow": {latitude: 55.751667, longitude: 37.617778},
-    "Eiffel Tower, Paris": {latitude: 48.8583, longitude: 2.2945},
-    "Riksdag building, Stockholm": {latitude: 59.3275, longitude: 18.0675},
-    "Royal Palace, Oslo": {latitude: 59.916911, longitude: 10.727567}
+var data = [<% for(var i=0; i<data.length; i++) {%>
+   {name:'<%= data[i].name %>',address:'<%= data[i].city %><%= data[i].area %><%= data[i].address %>'},
+<% } %>
+]
+
+// var _da =[
+//     {name:'太平洋崇光百貨(BR4)',address:'台北市大安區忠孝東路三段300號2樓',latitude: 25.04178, longitude: 121.534296},
+//     {name:'京站購物中心',address:'台北市大同區承德路1段1號',latitude: 25.0493449, longitude: 121.5168249},
+//     {name:'遠東百貨(板橋中山)',address:'新北市板橋區中山路1段152號',latitude: 25.0110399, longitude: 121.464423}
+// ]
+var spots ={
+    '太平洋崇光百貨(BR4)':{latitude: 25.04178, longitude: 121.534296,address:'台北市大安區忠孝東路三段300號2樓',tel:'02-25525812'},
+    '京站購物中心':{latitude: 25.0493449, longitude: 121.5168249,address:'台北市大同區承德路1段1號',tel:'02-87723534'},
+    '遠東百貨(板橋中山)':{latitude: 25.0110399, longitude: 121.464423,address:'新北市板橋區中山路1段152號',tel:'02-87723534'}
 }
 
 
 // in this case set offset to 1 otherwise the nearest point will always be your reference point
 console.log('yoyo');
-
 navigator.geolocation.getCurrentPosition(
     function(position) {
       console.log(position.coords);
-      console.log(geolib.findNearest(position.coords, spots, 1) );
+      var _obj = geolib.findNearest(position.coords, spots, 1)
+
+      var _tmp = '<div style="width:60%;float:left;height:80px">'+_obj.key+'<p>'+spots[_obj.key].address+'</p></div><div style="width:40%;float:left;height:80px"><a href="tel:'+spots[_obj.key].tel+'" ><img src="/images/phone.png" style="float:right"/></a></div>';
+      $('.nearlestdiv').html(_tmp);
+
+      var _length = Object.keys(spots).length
+      var _content = Object.keys(spots);
+      console.log(_content);
+      var _othertmp = '';
+      for(var i=0; i<_length; i++){
+        // console.log(spots[2])
+        if(_content[i] != _obj.key){
+          var _n = _content[i];
+          _othertmp += '<li style="width:100%;height:65px;"><div style="width:60%;float:left;height:80px">'+_n+'<p style="width:100%;height:30px;overflow:hidden">'+spots[_n].address+'</p></div><div style="width:40%;float:left;height:80px"><a href="tel:'+spots[_n].tel+'" ><img src="/images/phone.png" style="float:right"/></a></div></li><li style="width:100%;height:1px;background:#ccc;margin-bottom:10px;margin-top:10px"></li>';
+        }
+      }
+      $('.othernestdiv').html(_othertmp);
     }
   );
-console.log('=====');
+// console.log('=====');
       if (navigator.userAgent.indexOf('iPhone')!=-1) {
         $('html').css('height' ,417);
         $('body').css('height' ,417);

@@ -53,7 +53,7 @@ function postdata(req, res, next){
 		uuid:        req.body.uui
      }
      , function (err, numberAffected, raw) {
-
+      res.redirect('/end');
     });
 }
 function end(req, res, next){
@@ -66,7 +66,23 @@ function input(req, res, next){
 	res.render('input')
 }
 function arround(req, res ,next){
-  res.render('arround');
+  var data = [{
+    name:'太平洋崇光百貨(BR4)',
+    city:'台北市',
+    area:'大安區',
+    address:'忠孝東路三段300號2樓'
+},{
+    name:'京站購物中心',
+    city:'台北市',
+    area:'大同區',
+    address:'承德路1段1號'
+},{
+    name:'遠東百貨(板橋中山)',
+    city:'新北市',
+    area:'板橋區',
+    address:'中山路1段152號'
+}];
+  res.render('arround',{data:data});
 }
 module.exports = {
   start: Start,

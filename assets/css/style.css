@@ -139,6 +139,24 @@ box-sizing: border-box;}
 .s2.active{
 	background:url('/images/button.png') 308px 153px;
 }
+.s3.active{
+	background:url('/images/button.png') 206px 153px;
+}
+.btnagain{
+	background:url('/images/button.png') 410px 102px;	
+	margin: auto;
+	width: 102px;
+	height: 51px;
+	cursor:pointer;
+	margin-left: 30px
+}
+.btngo{
+	background:url('/images/button.png') 206px 102px;	
+	width: 102px;
+	height: 51px;
+	float: right;
+	margin-right: 30px
+}
 .btn_fr{
 	width: 314px;
 	margin: 0 auto;
@@ -176,6 +194,9 @@ body{
 @media (min-width: 325px) {
 	.btn5{
 		margin-left: 4px;
+	}
+	.btnagain{
+		margin-left: 30px;
 	}
 	.btn_fr{
 	width: 320px;
