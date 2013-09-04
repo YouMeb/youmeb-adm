@@ -44,7 +44,7 @@ module.exports = function (app) {
 	app.post('/skii/postdata',controllers.home.postdata)
 	app.get('/skii/end',controllers.home.end);
 	app.get('/skii/say',controllers.home.say);
-	app.get('/skii/',controllers.home.index);
+	app.get('/skii',controllers.home.index);
 	app.get('/skii/arround',controllers.home.arround);
 	
 }
