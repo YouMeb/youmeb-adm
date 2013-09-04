@@ -16,9 +16,9 @@
      <!-- <input type='submit' value=" " class="btn4">
      <input type='submit' value=" " class="btn4">
      <input type='submit' value=" " class="btn4"> -->
-      <a class="btn5 s1" href="/start"></a>
-      <a class="btn5 s2" href="/say"></a>
-      <a class="btn5 s3 active" href="/arround"></a>
+      <a class="btn5 s1" href="/skii/start"></a>
+      <a class="btn5 s2" href="/skii/say"></a>
+      <a class="btn5 s3 active" href="/skii/arround"></a>
     </div>
     <div class="input_fr arround_fr">
       離你最近的門市：
@@ -91,7 +91,7 @@ navigator.geolocation.getCurrentPosition(
       var id;
       $.ajax({
         type:'GET',
-        url:'/getid',
+        url:'/skii/getid',
       }).done(function(data){
         console.log(data);
         id = data.id;

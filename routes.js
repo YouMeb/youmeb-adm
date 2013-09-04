@@ -38,13 +38,13 @@ reader.addListener('data', function(data) {
 
 
 module.exports = function (app) {  
-  	app.get('/start', controllers.home.start);
-	app.get('/input',controllers.home.input)
-	app.get('/getid',controllers.home.radamnumber);
-	app.post('/postdata',controllers.home.postdata)
-	app.get('/end',controllers.home.end);
-	app.get('/say',controllers.home.say);
-	app.get('/',controllers.home.index);
-	app.get('/arround',controllers.home.arround);
+  	app.get('/skii/start', controllers.home.start);
+	app.get('/skii/input',controllers.home.input)
+	app.get('/skii/getid',controllers.home.radamnumber);
+	app.post('/skii/postdata',controllers.home.postdata)
+	app.get('/skii/end',controllers.home.end);
+	app.get('/skii/say',controllers.home.say);
+	app.get('/skii',controllers.home.index);
+	app.get('/skii/arround',controllers.home.arround);
 	
 }
