@@ -25,7 +25,7 @@
   <!-- <div id="bg_phone"></div> -->
   <div id="bg_input">
     <div class="input_fr">
-      <form action='/postdata' method='post'>
+      <form action='/skii/postdata' method='post'>
       <input type='hidden' name='id' class="id">
       <input type='hidden' name='uuid' class="uuid">
       姓名：
@@ -59,7 +59,7 @@
       var id;
       $.ajax({
         type:'GET',
-        url:'/getid',
+        url:'/skii/getid',
       }).done(function(data){
         console.log(data);
         id = data.id;
