@@ -58,7 +58,7 @@ box-sizing: border-box;}
 	height: 100%;
 	overflow: scroll;
 	overflow-x: hidden;
-	padding-top: 5rem;
+	padding-top: 7rem;
 	-webkit-overflow-scrolling: touch;
 }
 .bg_index{
@@ -72,7 +72,7 @@ box-sizing: border-box;}
 	height: 100%;
 	overflow: scroll;
 	overflow-x: hidden;
-	padding-top: 5rem;
+	padding-top: 7rem;
 	-webkit-overflow-scrolling: touch;
 }
 
