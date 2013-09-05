@@ -23,6 +23,7 @@
   </div> -->
   <!-- <div id="bg_over"></div> -->
   <!-- <div id="bg_phone"></div> -->
+  <div id="mask_b"></div>
   <div id="bg_input">
     <div class="input_fr">
       <form action='/skii/postdata' method='post'>
@@ -65,6 +66,19 @@
         id = data.id;
         $('.id').val(id);
       });
+      $(window).resize(function() {
+        mask();
+      });
+      function mask(){
+          var _wi = window.innerWidth;
+          var _he = window.innerHeight;
+          if(_wi >= _he){
+            $('#mask_b').css('display','block');
+          }else{
+            $('#mask_b').css('display','none');
+          }
+      }
+      mask();
       		// var _w = window.innerWidth;
       		// var _h = window.innerHeight;
         //   var a = (_h-480);

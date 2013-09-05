@@ -10,10 +10,26 @@
   <script src="/js/main.js"></script>
 </head>
 <body onload="main()">
+  <div id="mask_b"></div>
   <canvas id="lottery">
   </canvas>
   <div id="mask">
     <span class="mask-msg"></span>
   </div>
 </body>
+<script>
+$(window).resize(function() {
+        mask();
+      });
+      function mask(){
+          var _wi = window.innerWidth;
+          var _he = window.innerHeight;
+          if(_wi >= _he){
+            $('#mask_b').css('display','block');
+          }else{
+            $('#mask_b').css('display','none');
+          }
+      }
+      mask();
+</script>
 </html>

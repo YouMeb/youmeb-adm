@@ -23,6 +23,7 @@
   </div> -->
   <!-- <div id="bg_over"></div> -->
   <!-- <div id="bg_phone"></div> -->
+  <div id="mask_b"></div>
   <div id="bg_input">
     <div class="btn_fr">
      <!-- <input type='submit' value=" " class="btn4">
@@ -44,6 +45,19 @@
             window.scrollTo(0, 1); }, 10);
           });
       };
+      $(window).resize(function() {
+        mask();
+      });
+      function mask(){
+          var _wi = window.innerWidth;
+          var _he = window.innerHeight;
+          if(_wi >= _he){
+            $('#mask_b').css('display','block');
+          }else{
+            $('#mask_b').css('display','none');
+          }
+      }
+      mask();
       		// var _w = window.innerWidth;
       		// var _h = window.innerHeight;
         //   var a = (_h-480);
