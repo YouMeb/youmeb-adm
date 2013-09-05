@@ -238,11 +238,11 @@
               //alert(_lo);
               if(_lo<=0 && _lo>=-150){
                 _lo = -_lo-30
-                alert('yoyo1:'+_lo)
+                //alert('yoyo1:'+_lo)
                 // console.log(_lo)
               }else if(_lo<=-150){
                 _lo = _lo/3
-                alert('yoyo2:'+_lo)
+                //alert('yoyo2:'+_lo)
                 //alert(_lo)
               }
               var _li = (lottery.height - grey.height) / 2;
