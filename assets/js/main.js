@@ -14,16 +14,16 @@ function main() {
 
   // 圖片
   var images = {
-    bg: 'images/bg.jpg',
-    grey: 'images/gray.png',
-    brush: 'images/brush.png'
+    bg: '/images/bg.jpg',
+    grey: '/images/gray.png',
+    brush: '/images/brush.png'
   };
   (function (len) {
     var n;
     console.log(len);
     while (len) {
       n = len >= 10 ? len : '0' + len;
-      images['image-' + n] = 'images/image-' + n + '.jpg';
+      images['image-' + n] = '/images/image-' + n + '.jpg';
       len -= 1;
     }
   })(gifts.length);
