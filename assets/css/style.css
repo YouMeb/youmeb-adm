@@ -62,7 +62,7 @@ box-sizing: border-box;}
 	-webkit-overflow-scrolling: touch;
 }
 .bg_index{
-	background:url('/images/index_bg.jpg')  no-repeat center center;
+	background:url('/images/index_bg.jpg')  no-repeat top center;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
