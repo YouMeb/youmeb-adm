@@ -44,12 +44,18 @@
             window.scrollTo(0, 1); }, 10);
           });
       };
-
-      		var _wi = window.innerWidth;
-      		var _he = window.innerHeight;
-        if(_wi >= _he){
-          $('#mask_b').css('display','block');
-        }
+      $(window).resize(function() {
+        mask();
+      });
+      function mask(){
+          var _wi = window.innerWidth;
+          var _he = window.innerHeight;
+          if(_wi >= _he){
+            $('#mask_b').css('display','block');
+          }
+      }
+      mask();
+      
         //   // $('.aaa').html(Math.abs(a));
       		// $('#bg').css({'width':_w,'height':_h+100});
         //   $('#bg2').css({'width':_w,'height':_h+100});
