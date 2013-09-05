@@ -53,7 +53,7 @@ function postdata(req, res, next){
 		uuid:        req.body.uui
      }
      , function (err, numberAffected, raw) {
-      res.redirect('/end');
+      res.redirect('/skii/end');
     });
 }
 function end(req, res, next){
