@@ -32,7 +32,7 @@ box-sizing: border-box;}
 	margin: auto;	
 }
 #bg_over{
-	background:url('/images/bg_over.jpg')  no-repeat center center;
+	background:url('/images/bg_over.jpg')  no-repeat top center;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -40,7 +40,7 @@ box-sizing: border-box;}
 	margin: auto;		
 }
 #bg_phone{
-	background:url('/images/bg_over.jpg')  no-repeat center center;
+	background:url('/images/bg_over.jpg')  no-repeat top center;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -48,7 +48,7 @@ box-sizing: border-box;}
 	margin: auto;		
 }
 #bg_input{
-	background:url('/images/bg1.png')  no-repeat center center;
+	background:url('/images/bg1.png')  no-repeat top center;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
