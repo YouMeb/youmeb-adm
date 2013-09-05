@@ -233,7 +233,19 @@
             init: function (layer) {
               var grey = images.grey;
               var bg = lottery.getImage();
-              layer.ctx.drawImage(grey, (lottery.width - grey.width) / 2, (lottery.height - grey.height) / 2 + 70, grey.width, grey.height);
+              var _lo = (lottery.width - grey.width) / 2;
+              // console.log(_lo)
+              //alert(_lo);
+              if(_lo<=0 && _lo>=-150){
+                _lo = -_lo-30
+                // console.log(_lo)
+              }else if(_lo<=-150){
+                _lo = _lo/3
+                //alert(_lo)
+              }
+              var _li = (lottery.height - grey.height) / 2;
+
+              layer.ctx.drawImage(grey, _lo/2, (lottery.height - grey.height) / 2 + 110, grey.width/1.8, grey.height/1.8);
               layer.ctx.globalCompositeOperation = 'source-out';
               layer.ctx.drawImage(bg, (lottery.width - bg.width) / 2, (lottery.height - bg.height) / 2, bg.width, bg.height);
               layer.ctx.globalCompositeOperation = 'source-over';
