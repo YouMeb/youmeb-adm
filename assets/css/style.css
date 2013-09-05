@@ -191,6 +191,16 @@ body{
 .arround_fr{
 	height:auto;
 }
+#mask_b{
+	width: 100%;
+	height:100%;
+	background: #000;
+	z-index: 99;
+	position: fixed;
+	top:0;
+	left: 0;
+	display: none;
+}
 @media (min-width: 325px) {
 	.btn5{
 		margin-left: 4px;

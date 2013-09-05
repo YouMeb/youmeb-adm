@@ -23,6 +23,7 @@
   </div> -->
   <!-- <div id="bg_over"></div> -->
   <!-- <div id="bg_phone"></div> -->
+  <div id="mask_b"></div>
   <div class="bg_index">
     <div class="btn_fr indexbb_fr">
      <!-- <input type='submit' value=" " class="btn4">
@@ -43,9 +44,12 @@
             window.scrollTo(0, 1); }, 10);
           });
       };
-      		// var _w = window.innerWidth;
-      		// var _h = window.innerHeight;
-        //   var a = (_h-480);
+
+      		var _wi = window.innerWidth;
+      		var _he = window.innerHeight;
+        if(_wi >= _he){
+          $('#mask_b').css('display','block');
+        }
         //   // $('.aaa').html(Math.abs(a));
       		// $('#bg').css({'width':_w,'height':_h+100});
         //   $('#bg2').css({'width':_w,'height':_h+100});
