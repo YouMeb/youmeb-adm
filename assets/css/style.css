@@ -221,4 +221,11 @@ body{
 	.indexbb_fr{
 		margin-top:40px;
 	}
+
+}
+@media (min-width: 680px){
+	#mask_b{
+	
+	display: block;
+	}
 }
