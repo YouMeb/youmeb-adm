@@ -89,11 +89,6 @@
      {name:'<%= data[i].name %>',address:'<%= data[i].city %><%= data[i].area %><%= data[i].address %>'},
   <% } %>
   ]
-  // var _da =[
-  //     {name:'太平洋崇光百貨(BR4)',address:'台北市大安區忠孝東路三段300號2樓',latitude: 25.04178, longitude: 121.534296},
-  //     {name:'京站購物中心',address:'台北市大同區承德路1段1號',latitude: 25.0493449, longitude: 121.5168249},
-  //     {name:'遠東百貨(板橋中山)',address:'新北市板橋區中山路1段152號',latitude: 25.0110399, longitude: 121.464423}
-  // ]
       navigator.geolocation.getCurrentPosition(
         function(position) {
             var _obj = geolib.findNearest(position.coords, spots, 1)
