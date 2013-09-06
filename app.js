@@ -35,4 +35,5 @@ require(path.join(__dirname, 'models', 'index.js'));
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
-console.log('123');
+console.log('kerker');
+
