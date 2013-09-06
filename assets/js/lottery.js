@@ -246,12 +246,23 @@
                 //alert('yoyo2:'+_lo)
                 //alert(_lo)
               }
+              var _li = (lottery.height - grey.height) / 2;
+              var _gw = grey.width/1.8;
+              var _gh = grey.height/1.8;
+              
+              if(window.innerWidth>= 360){
+                _gw = grey.width/2.3
+                _gh = grey.height/2.3  
+                layer.ctx.drawImage(grey, _lo/2+60, (lottery.height - grey.height) / 2 + 205, _gw, _gh);
+              }else{
+                layer.ctx.drawImage(grey, _lo/2, (lottery.height - grey.height) / 2 + 135, _gw, _gh);
+              }
               //alert('a:'+grey.width/1.8+' b:'+grey.height/1.8);
               //alert('a2:'+lottery+' b2:'+lottery);
               
-              var _li = (lottery.height - grey.height) / 2;
+              
 
-              layer.ctx.drawImage(grey, _lo/2, (lottery.height - grey.height) / 2 + 135, grey.width/1.8, grey.height/1.8);
+              
               layer.ctx.globalCompositeOperation = 'source-out';
               layer.ctx.drawImage(bg, 0,0, bg.width, bg.height);
               layer.ctx.globalCompositeOperation = 'source-over';
