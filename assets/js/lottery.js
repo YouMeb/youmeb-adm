@@ -251,9 +251,9 @@
               
               var _li = (lottery.height - grey.height) / 2;
 
-              layer.ctx.drawImage(grey, _lo/2, (lottery.height - grey.height) / 2 + 110, grey.width/1.8, grey.height/1.8);
+              layer.ctx.drawImage(grey, _lo/2, (lottery.height - grey.height) / 2 + 135, grey.width/1.8, grey.height/1.8);
               layer.ctx.globalCompositeOperation = 'source-out';
-              layer.ctx.drawImage(bg, (lottery.width - bg.width) / 2, (lottery.height - bg.height) / 2, bg.width, bg.height);
+              layer.ctx.drawImage(bg, 0,0, bg.width, bg.height);
               layer.ctx.globalCompositeOperation = 'source-over';
             },
             before: function (layer) {
