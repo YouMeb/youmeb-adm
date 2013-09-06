@@ -261,7 +261,7 @@
               //alert('a2:'+lottery+' b2:'+lottery);
               
               
-
+              console.log('123')
               
               layer.ctx.globalCompositeOperation = 'source-out';
               layer.ctx.drawImage(bg, 0,0, bg.width, bg.height);
