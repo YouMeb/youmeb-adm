@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
   <script src="/js/lottery.js"></script>
   <script src="/js/main.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body onload="main()">
   <div id="mask_b"></div>
@@ -18,10 +19,9 @@
   </div>
 </body>
 <script>
-alert('122');
 if (navigator.userAgent.indexOf('iPhone')!=-1) {
-        $('html').css({'height' :417,'background':'#000'});
-        $('body').css({'height':417,'background':'#000'});
+        $('html').css({'height' :417});
+        $('body').css({'height':417});
         alert('123');
           window.addEventListener("load",function() {  
             setTimeout(function(){

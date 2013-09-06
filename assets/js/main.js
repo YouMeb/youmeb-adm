@@ -46,6 +46,7 @@ function main() {
         width: x,
         height: y
       };
+
     })();
 
     function load() {
@@ -104,6 +105,7 @@ function main() {
     // 刮完啦
     lottery.once('done', function () {
       $mask.classList.add('show');
+      $mask.style.height = y;
       $msg.innerText = '恭喜你獲得' + gifts[i - 1];
       $msg.innerHTML +='<br/><div style="width:100%;height:100px;"><a class="btn5 btnagain" href="/skii/input"></a><a class="btn5 btngo" href="/skii/start"></a></div>';
     });
