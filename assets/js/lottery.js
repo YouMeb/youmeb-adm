@@ -260,7 +260,7 @@
               //alert('a:'+grey.width/1.8+' b:'+grey.height/1.8);
               //alert('a2:'+lottery+' b2:'+lottery);
               
-              
+               
               console.log('123')
               
               layer.ctx.globalCompositeOperation = 'source-out';
