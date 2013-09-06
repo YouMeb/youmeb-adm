@@ -89,24 +89,24 @@
      {name:'<%= data[i].name %>',address:'<%= data[i].city %><%= data[i].area %><%= data[i].address %>'},
   <% } %>
   ]
-      navigator.geolocation.getCurrentPosition(
-        function(position) {
-            var _obj = geolib.findNearest(position.coords, spots, 1)
-            var _tmp = '<div style="width:60%;float:left;height:80px">'+_obj.key+'<p>'+spots[_obj.key].address+'</p></div><div style="width:40%;float:left;height:80px"><a href="tel:'+spots[_obj.key].tel+'" ><img src="/images/phone.png" style="float:right"/></a></div>';
-            $('.nearlestdiv').html(_tmp);
-            var _othertmp = '';
-            for(var i=0; i<_length; i++){
-                 if(_content[i] != _obj.key){
-                var _n = _content[i];
-                _othertmp += '<li style="width:100%;height:65px;"><div style="width:60%;float:left;height:80px">'+_n+'<p style="width:100%;height:30px;overflow:hidden">'+spots[_n].address+'</p></div><div style="width:40%;float:left;height:80px"><a href="tel:'+spots[_n].tel+'" ><img src="/images/phone.png" style="float:right"/></a></div></li><li style="width:100%;height:1px;background:#ccc;margin-bottom:10px;margin-top:10px"></li>';
-              }
+    navigator.geolocation.getCurrentPosition(
+      function(position) {
+          var _obj = geolib.findNearest(position.coords, spots, 1)
+          var _tmp = '<div style="width:60%;float:left;height:80px">'+_obj.key+'<p>'+spots[_obj.key].address+'</p></div><div style="width:40%;float:left;height:80px"><a href="tel:'+spots[_obj.key].tel+'" ><img src="/images/phone.png" style="float:right"/></a></div>';
+          $('.nearlestdiv').html(_tmp);
+          var _othertmp = '';
+          for(var i=0; i<_length; i++){
+               if(_content[i] != _obj.key){
+              var _n = _content[i];
+              _othertmp += '<li style="width:100%;height:65px;"><div style="width:60%;float:left;height:80px">'+_n+'<p style="width:100%;height:30px;overflow:hidden">'+spots[_n].address+'</p></div><div style="width:40%;float:left;height:80px"><a href="tel:'+spots[_n].tel+'" ><img src="/images/phone.png" style="float:right"/></a></div></li><li style="width:100%;height:1px;background:#ccc;margin-bottom:10px;margin-top:10px"></li>';
             }
-            $('.othernestdiv').html(_othertmp);
-        },
-        function(e){
-          $('.nearlestdiv').html('很抱歉您的定位功能未開啟！故無法偵測');
-        } 
-    );
+          }
+          $('.othernestdiv').html(_othertmp);
+      },
+      function(e){
+        $('.nearlestdiv').html('很抱歉您的定位功能未開啟！故無法偵測');
+      } 
+  );
        
   </script>
 </body>
