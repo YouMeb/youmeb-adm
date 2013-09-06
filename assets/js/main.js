@@ -1,5 +1,13 @@
 'use strict';
-
+if (navigator.userAgent.indexOf('iPhone')!=-1) {
+        $('html').css('height' ,417);
+        $('body').css('height' ,417);
+        alert('123');
+          window.addEventListener("load",function() {  
+            setTimeout(function(){
+            window.scrollTo(0, 1); }, 10);
+          });
+      };
 function main() {
   // ele
   var $mask = document.querySelector('#mask');
