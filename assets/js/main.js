@@ -28,7 +28,6 @@ function main() {
     }
   })(gifts.length);
 
-
   // preload
   (function (images, done) {
     var keys = Object.keys(images);
@@ -100,7 +99,8 @@ function main() {
   })(images, function (images) {
     var i = Math.round(Math.random() * (gifts.length - 1)) + 1;
     var ii = i >= 10 ? i : '0' + i;
-
+    //alert('yoyo:'+images.grey.width)
+  
     // 刮完啦
     lottery.once('done', function () {
       $mask.classList.add('show');

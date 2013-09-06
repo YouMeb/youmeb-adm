@@ -232,6 +232,7 @@
           background: {
             init: function (layer) {
               var grey = images.grey;
+              // grey.width = 463;
               var bg = lottery.getImage();
               var _lo = (lottery.width - grey.width) / 2;
               // console.log(_lo)
@@ -245,6 +246,9 @@
                 //alert('yoyo2:'+_lo)
                 //alert(_lo)
               }
+              //alert('a:'+grey.width/1.8+' b:'+grey.height/1.8);
+              //alert('a2:'+lottery+' b2:'+lottery);
+              
               var _li = (lottery.height - grey.height) / 2;
 
               layer.ctx.drawImage(grey, _lo/2, (lottery.height - grey.height) / 2 + 110, grey.width/1.8, grey.height/1.8);
