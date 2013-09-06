@@ -1,7 +1,7 @@
 'use strict';
 alert('122');
 if (navigator.userAgent.indexOf('iPhone')!=-1) {
-        $('html').css({'height' ,417,'background':'#000'});
+        $('html').css({'height' :417,'background':'#000'});
         $('body').css({'height':417,'background':'#000');
         alert('123');
           window.addEventListener("load",function() {  
