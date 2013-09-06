@@ -1,4 +1,5 @@
 'use strict';
+alert('122');
 if (navigator.userAgent.indexOf('iPhone')!=-1) {
         $('html').css('height' ,417);
         $('body').css('height' ,417);
