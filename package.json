@@ -11,7 +11,10 @@
     "mongoose": "*",
     "request": "*",
     "crypto": "*",
-    "ya-csv":"*"
+    "ya-csv":"*",
+    "rssparser": "*",
+    "sequelize": "*",
+    "mysql": "*"
   },
   "author": "iamblue",  
   "license": "MIT",
