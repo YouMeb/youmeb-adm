@@ -9,6 +9,7 @@ var Sequelize = require('sequelize');
 var sequelize = new Sequelize('mysql://blue:F2muHUTrAyastusu@54.214.246.94:3306/meet', {
   // Look to the next section for possible options
 });
+console.log(sequelize);
 function twoDigits(d) {
     if(0 <= d && d < 10) return "0" + d.toString();
     if(-10 < d && d < 0) return "-0" + (-1*d).toString();
